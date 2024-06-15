@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title"><i class="fa-solid fa-tag fa-sm"></i> {{ page.title }}</h1>
+    <p class="post-description">an archive of posts in this category</p>
+  </header>
+
+  <article class="archive">
+    <div class="table-responsive">
+      <table class="table table-sm table-borderless">
+          {% for category in site.categories %}
+            <div class="archive-group">
+              {% capture category_name %}{{ category | first }}{% endcapture %}
+              <div id="#{{ category_name | slugize }}"></div>
+              <p></p>
+              
+              <h3 class="category-head">{{ category_name }}</h3>
+              <a name="{{ category_name | slugize }}"></a>
+              {% for post in site.categories[category_name] %}
+                <a class="post-link" href="{{ site.baseurl }}{{ post.url }}">{% if post.title and post.title != "" %}{{post.title}}{% else %}{{post.excerpt |strip_html}}{%endif%}</a>
+              {% endfor %}
+            </div>
+          {% endfor %}
+      </table>
+    </div>
+  </article>
+</div>
