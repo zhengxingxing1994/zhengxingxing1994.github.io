@@ -252,126 +252,125 @@ Exercise: Consider the question of representing integers with the base $a$. In o
 #### 2. THE INFINITUDE OF THE NUMBER SYSTEM. MATHEMATICAL INDUCTION
 
 Exercise: Prove by mathematical induction
-1. $\frac{1}{1 \cdot 2}+\frac{1}{2 \cdot 3}+\cdots+\frac{1}{n(n+1)}=\frac{n}{n+1}$.
+1. $$\frac{1}{1 \cdot 2}+\frac{1}{2 \cdot 3}+\cdots+\frac{1}{n(n+1)}=\frac{n}{n+1}$$.
 
     Base Case: For $n = 1$,
-    $$\\
-    \frac{1}{1 \cdot 2} = \frac{1}{2}
-    \\$$
+        $$\\
+        \frac{1}{1 \cdot 2} = \frac{1}{2}
+        \\$$
 
     So, the base case holds.
 
     Inductive Step: Assume the statement is true for some arbitrary positive integer \( k \), i.e.,
-    $$\\
-    \frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \cdots + \frac{1}{k(k+1)} = \frac{k}{k+1}.
-    \\$$
+        $$\\
+        \frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \cdots + \frac{1}{k(k+1)} = \frac{k}{k+1}.
+        \\$$
 
-    Now, we prove it for \( k+1 \):
-    $$\\
-    \frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \cdots + \frac{1}{k(k+1)} + \frac{1}{(k+1)((k+1)+1)} = \frac{k}{k+1} + \frac{1}{(k+1)(k+2)}.
-    \\$$
+    Now, we prove it for \( $$k+1$$ \):
+        $$\\
+        \frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \cdots + \frac{1}{k(k+1)} + \frac{1}{(k+1)((k+1)+1)} = \frac{k}{k+1} + \frac{1}{(k+1)(k+2)}.
+        \\$$
 
     To simplify the right-hand side:
-    $$\\
-    \frac{k}{k+1} + \frac{1}{(k+1)(k+2)} = \frac{k(k+2) + 1}{(k+1)(k+2)} = \frac{k^2 + 2k + 1}{(k+1)(k+2)} = \frac{(k+1)^2}{(k+1)(k+2)} = \frac{k+1}{k+2}.
-    \\$$
+        $$\\
+        \frac{k}{k+1} + \frac{1}{(k+1)(k+2)} = \frac{k(k+2) + 1}{(k+1)(k+2)} = \frac{k^2 + 2k + 1}{(k+1)(k+2)} = \frac{(k+1)^2}{(k+1)(k+2)} = \frac{k+1}{k+2}.
+        \\$$
 
-    Therefore, by mathematical induction, the statement
-    is proven for all positive integers n.
-
-2. $\frac{1}{2}+\frac{2}{2^n}+\frac{3}{2^n}+\cdots+\frac{n}{2^n}=2-\frac{n+2}{2^n}$
-
-    Base Case: For \( n = 1 \),
-    $$\\
-    \frac{1}{2} = 2 - \frac{1+2}{2^1} = 2 - \frac{3}{2} = \frac{1}{2}.
-    $$
-    So, the base case holds.
-
-    Inductive Step:Assume the statement is true for some arbitrary positive integer \( k \) sum denoted as $A_k$
-    $$\\
-    A_k = \frac{1}{2} + \frac{2}{2^2} + \frac{3}{2^2} + \cdots + \frac{k}{2^2} = 2 - \frac{k+2}{2^k}.
-    \\$$
-    Then for sum of $A_{k+1}$
-    $$\\
-        \begin{aligned}
-        A_{k+1} &= 2 - \frac{k+2}{2^k} + \frac{k+1}{2^{k+1}} \\
-        &= 2 - \frac{2k+4}{2^{k+1}} + \frac{k+1}{2^{k+1}} \\
-        &= 2 - \frac{k+3}{2^{k+1}}
-        \end{aligned}
-    \\$$
     Therefore, by mathematical induction, the statement is proven for all positive integers n.
 
-3. $1+2 q+3 q^2+\cdots+n q^{n-1}=\frac{1-(n+1) q^n+n q^{n+1}}{(1-q)^2}$.
+2. $$\frac{1}{2}+\frac{2}{2^n}+\frac{3}{2^n}+\cdots+\frac{n}{2^n}=2-\frac{n+2}{2^n}$$
+
+    Base Case: For \( n = 1 \),
+        $$\\
+        \frac{1}{2} = 2 - \frac{1+2}{2^1} = 2 - \frac{3}{2} = \frac{1}{2}.
+        $$
+        So, the base case holds.
+
+    Inductive Step:Assume the statement is true for some arbitrary positive integer \( k \) sum denoted as $A_k$
+        $$\\
+        A_k = \frac{1}{2} + \frac{2}{2^2} + \frac{3}{2^2} + \cdots + \frac{k}{2^2} = 2 - \frac{k+2}{2^k}.
+        \\$$
+        Then for sum of $A_{k+1}$
+        $$\\
+            \begin{aligned}
+            A_{k+1} &= 2 - \frac{k+2}{2^k} + \frac{k+1}{2^{k+1}} \\
+            &= 2 - \frac{2k+4}{2^{k+1}} + \frac{k+1}{2^{k+1}} \\
+            &= 2 - \frac{k+3}{2^{k+1}}
+            \end{aligned}
+        \\$$
+    Therefore, by mathematical induction, the statement is proven for all positive integers n.
+
+3. $$1+2 q+3 q^2+\cdots+n q^{n-1}=\frac{1-(n+1) q^n+n q^{n+1}}{(1-q)^2}$$.
 
     **Base Case:** \( n = 1 \)
 
-    $$
-    1 = 1.
-    $$
+        $$
+        1 = 1.
+        $$
 
-    $$
-    \frac{1 - 2q + q^2}{(1-q)^2} = \frac{(1-q)^2}{(1-q)^2} = 1.
-    $$
+        $$
+        \frac{1 - 2q + q^2}{(1-q)^2} = \frac{(1-q)^2}{(1-q)^2} = 1.
+        $$
 
     **Inductive Step:**
 
     Assume the identity holds for some arbitrary \( n = k \):
 
-    $$\\
-    1 + 2q + 3q^2 + \cdots + kq^{k-1} = \frac{1 - (k+1)q^k + kq^{k+1}}{(1-q)^2}.
-    \\$$
+        $$\\
+        1 + 2q + 3q^2 + \cdots + kq^{k-1} = \frac{1 - (k+1)q^k + kq^{k+1}}{(1-q)^2}.
+        \\$$
 
     Now, we need to show it holds for \( n = k + 1 \):
 
-    $$\\
-    1 + 2q + 3q^2 + \cdots + (k+1)q^k = \frac{1 - ((k+1)+1)q^{k+1} + (k+1)q^{k+2}}{(1-q)^2}.
-    \\$$
+        $$\\
+        1 + 2q + 3q^2 + \cdots + (k+1)q^k = \frac{1 - ((k+1)+1)q^{k+1} + (k+1)q^{k+2}}{(1-q)^2}.
+        \\$$
 
     To prove this, consider the sum up to \( k+1 \):
 
-    $$\\
-    1 + 2q + 3q^2 + \cdots + (k+1)q^k = \left( 1 + 2q + 3q^2 + \cdots + kq^{k-1} \right) + (k+1)q^k.
-    \\$$
+        $$\\
+        1 + 2q + 3q^2 + \cdots + (k+1)q^k = \left( 1 + 2q + 3q^2 + \cdots + kq^{k-1} \right) + (k+1)q^k.
+        \\$$
 
     Using the induction hypothesis:
 
-    $$\\
-    1 + 2q + 3q^2 + \cdots + kq^{k-1} = \frac{1 - (k+1)q^k + kq^{k+1}}{(1-q)^2}.
-    \\$$
+        $$\\
+        1 + 2q + 3q^2 + \cdots + kq^{k-1} = \frac{1 - (k+1)q^k + kq^{k+1}}{(1-q)^2}.
+        \\$$
 
     Therefore,
 
-    $$\\
-    1 + 2q + 3q^2 + \cdots + (k+1)q^k = \frac{1 - (k+1)q^k + kq^{k+1}}{(1-q)^2} + (k+1)q^k.
-    \\$$
+        $$\\
+        1 + 2q + 3q^2 + \cdots + (k+1)q^k = \frac{1 - (k+1)q^k + kq^{k+1}}{(1-q)^2} + (k+1)q^k.
+        \\$$
 
     Combine the terms over a common denominator:
 
-    $$\\
-    \frac{1 - (k+1)q^k + kq^{k+1} + (k+1)q^k (1-q)^2}{(1-q)^2}.
-    \\$$
+        $$\\
+        \frac{1 - (k+1)q^k + kq^{k+1} + (k+1)q^k (1-q)^2}{(1-q)^2}.
+        \\$$
 
     Simplify the numerator:
 
-    $$\\
-    1 - (k+2)q^{k+1} + (k+1)q^{k+2} + (k+1)q^k (1-q)^2.
-    \\$$
+        $$\\
+        1 - (k+2)q^{k+1} + (k+1)q^{k+2} + (k+1)q^k (1-q)^2.
+        \\$$
 
 
-4. $(1+q)\left(1+q^3\right)\left(1+q^0\right) \cdots\left(1+q^{x^n}\right)=\frac{1-q^{2^{n+1}}}{1-q}$.
+4. $$($+q)\left(1+q^3\right)\left(1+q^0\right) \cdots\left(1+q^{x^n}\right)=\frac{1-q^{2^{n+1}}}{1-q}$$.
 
 Find the sum of the following geometrical progressions:
 
-5. $\frac{1}{1+x^2}+\frac{1}{\left(1+x^2\right)^3}+\cdots+\frac{1}{\left(1+x^2\right)^n}$.
+5. $$\frac{1}{1+x^2}+\frac{1}{\left(1+x^2\right)^3}+\cdots+\frac{1}{\left(1+x^2\right)^n}$$.
 
-6. $1+\frac{x}{1+x^2}+\frac{x^2}{\left(1+x^2\right)^2}+\cdots+\frac{x^n}{\left(1+x^3\right)^n}$.
+6. $$1+\frac{x}{1+x^2}+\frac{x^2}{\left(1+x^2\right)^2}+\cdots+\frac{x^n}{\left(1+x^3\right)^n}$$.
 
-7. $\frac{x^2-y^2}{x^2+y^2}+\left(\frac{x^2-y^2}{x^2+y^2}\right)^3+\cdots+\left(\frac{x^2-y^2}{x^2+y^2}\right)^x$.
+7. $$\frac{x^2-y^2}{x^2+y^2}+\left(\frac{x^2-y^2}{x^2+y^2}\right)^3+\cdots+\left(\frac{x^2-y^2}{x^2+y^2}\right)^x$$.
 
 Using formulas 4 and 5 prove:
 
-8. $1^2+3^2+\cdots+(2 n+1)^2=\frac{(n+1)(2 n+1)(2 n+3)}{3}$.
+8. $$1^2+3^2+\cdots+(2 n+1)^2=\frac{(n+1)(2 n+1)(2 n+3)}{3}$$.
 
-9. $1^2+3^2+\cdots+(2 n+1)^2=(n+1)^2\left(2 n^2+4 n+1\right)$.
+9. $$1^2+3^2+\cdots+(2 n+1)^2=(n+1)^2\left(2 n^2+4 n+1\right)$$.
 
 10. Prove the same results directly by mathematical induction.
