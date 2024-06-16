@@ -332,10 +332,6 @@ Exercise: Prove by mathematical induction
     Base Case: \( n = 1 \)
 
     $$
-        1 = 1.
-    $$
-
-    $$
     \frac{1 - 2q + q^2}{(1-q)^2} = \frac{(1-q)^2}{(1-q)^2} = 1.
     $$
 
@@ -368,27 +364,71 @@ Exercise: Prove by mathematical induction
     Therefore,
 
     $$\\
-    1 + 2q + 3q^2 + \cdots + (k+1)q^k = \frac{1 - (k+1)q^k + kq^{k+1}}{(1-q)^2} + (k+1)q^k.
+    \begin{aligned}
+    1 + 2q + 3q^2 + \cdots + (k+1)q^k &= \frac{1 - (k+1)q^k + kq^{k+1}}{(1-q)^2} + (k+1)q^k \\
+        &=  \frac{1 - (k+1)q^k + kq^{k+1} + (k+1)q^k (1-q)^2}{(1-q)^2} \\
+        &= \frac{1 - (k+2) q^{k+1} + (k+1) q^{k+2}}{(1 - q)^2}
+    \end{aligned}
     \\$$
 
-    Combine the terms over a common denominator:
+    proof complete. 
 
-    $$\\
-    \frac{1 - (k+1)q^k + kq^{k+1} + (k+1)q^k (1-q)^2}{(1-q)^2}.
-    \\$$
+4. $$(1+q)\left(1+q^2\right)\left(1+q^4\right) \cdots\left(1+q^{2^n}\right)=\frac{1-q^{2^{n+1}}}{1-q}$$.
+    
+    Base Case: For $$n=1$$.
 
-    Simplify the numerator:
+    $$
+        \begin{aligned}
+            (1+q)(1+q^2) &= \frac{1 - q^4}{1 - q} \\
+            1 + q^2 + q + q^3 &= \frac{1 - q^4}{1 - q} \\
+            (1 + q^2 + q + q^3)(1-q) &= 1-q^4
+        \end{aligned}
+    $$
 
-    $$\\
-    1 - (k+2)q^{k+1} + (k+1)q^{k+2} + (k+1)q^k (1-q)^2.
-    \\$$
+    Simpily the left them we have $$1-q^4 = 1-q^4$$. therefore $$n=1$$ is true.
 
+    Assume for n case is correct, for n+1 case: 
+    $$
+        \begin{aligned}
+        (1+q)\left(1+q^2\right)\left(1+q^4\right) \cdots\left(1+q^{2^n}\right)(1+q^{2{n+1}}) 
+        &= \frac{1-q^{2^{n+1}}}{1-q}(1+q^{2^{n+1}})\\
+        &= \frac{1-q^{2^{n+2}}}{1-q}
+        \end{aligned}
+    $$
 
-4. $$(1+q)\left(1+q^3\right)\left(1+q^0\right) \cdots\left(1+q^{x^n}\right)=\frac{1-q^{2^{n+1}}}{1-q}$$.
+    Proof complete. 
 
 Find the sum of the following geometrical progressions:
 
-5. $$\frac{1}{1+x^2}+\frac{1}{\left(1+x^2\right)^3}+\cdots+\frac{1}{\left(1+x^2\right)^n}$$.
+5. $$\frac{1}{1+x^2}+\frac{1}{\left(1+x^2\right)^2}+\cdots+\frac{1}{\left(1+x^2\right)^n}$$.
+
+    Denote  $$S_n$$ be the sum
+
+    \begin{equation}
+    \label{sum_5_1}
+    S_n = \frac{1}{1+x^2}+\frac{1}{\left(1+x^2\right)^2}+\cdots+\frac{1}{\left(1+x^2\right)^n}
+    \end{equation}
+
+    Construct another sum: 
+    \begin{equation}
+    \label{sum_5_2}
+    \frac{1}{1+x^2}S_n = \frac{1}{\left(1+x^2\right)^2}+\cdots+\frac{1}{\left(1+x^2\right)^n}+\frac{1}{\left(1+x^2\right)^{n+1}}
+    \end{equation}
+
+    By using \eqref{sum_5_1} - \eqref{sum_5_2} we can have 
+
+    $$
+    \begin{aligned}
+    Sn - \frac{1}{1+x^2}S_n &= \frac{1}{\left(1+x^2\right)}-\frac{1}{\left(1+x^2\right)^{n+1}} \\
+    \frac{(1+x^2)S_n-S_n}{1+x^2} &=\frac{1}{\left(1+x^2\right)}-\frac{1}{\left(1+x^2\right)^{n+1}} \\
+    \frac{x^2}{1+x^2}S_n &=\frac{1}{\left(1+x^2\right)}-\frac{1}{\left(1+x^2\right)^{n+1}} \\
+    Sn &=\frac{1}{x^2} -  \frac{1}{\left(1+x^2\right)^{n}x^2}
+    \end{aligned}
+    $$
+
+    Thus the sum is:
+
+    $$S_n = \frac{1}{x^2} \left(1 - \frac{1}{(1+x^2)^n}\right)$$
 
 6. $$1+\frac{x}{1+x^2}+\frac{x^2}{\left(1+x^2\right)^2}+\cdots+\frac{x^n}{\left(1+x^3\right)^n}$$.
 
