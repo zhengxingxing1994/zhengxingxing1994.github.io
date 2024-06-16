@@ -129,31 +129,32 @@ The solution presented on the blog is my personal solutions for the exercises in
 
 4. Form the addition and multiplication tables for the bases 5, 11, 13.
 
-    $$\\
-        \begin{aligned} & \text{Table 1.3. Addition Table: Base 5} \\
-        & \begin{array}{c|ccccc}
-            & 0 & 1 & 2 & 3 & 4 \\
-        \hline
-        0 & 0 & 1 & 2 & 3 & 4 \\
-        1 & 1 & 2 & 3 & 4 & 10 \\
-        2 & 2 & 3 & 4 & 10 & 11 \\
-        3 & 3 & 4 & 10 & 11 & 12 \\
-        4 & 4 & 10 & 11 & 12 & 13 \\
-        \end{array}
-        \end{aligned}
+    $$
+    \begin{aligned} & \text{Table 1.3. Addition Table of Base 5} \\
+    & \begin{array}{c|ccccc}
+        & 0 & 1 & 2 & 3 & 4 \\
+    \hline
+    0 & 0 & 1 & 2 & 3 & 4 \\
+    1 & 1 & 2 & 3 & 4 & 10 \\
+    2 & 2 & 3 & 4 & 10 & 11 \\
+    3 & 3 & 4 & 10 & 11 & 12 \\
+    4 & 4 & 10 & 11 & 12 & 13 \\
+    \end{array}
+    \end{aligned}
 
-        \begin{aligned} & \text{Table 1.4. Multiplication Table: Base 5} \\
-            & \begin{array}{c|ccccc}
-            & 0 & 1 & 2 & 3 & 4 \\
-            \hline
-            0 & 0 & 0 & 0 & 0 & 0 \\
-            1 & 0 & 1 & 2 & 3 & 4 \\
-            2 & 0 & 2 & 4 & 11 & 13 \\
-            3 & 0 & 3 & 11 & 14 & 22 \\
-            4 & 0 & 4 & 13 & 22 & 31 \\
-        \end{array}
-        \end{aligned}
-    \\$$
+    \begin{aligned} & \text{Table 1.4. Multiplication Table of Base 5} \\
+    & \begin{array}{c|ccccc}
+    & 0 & 1 & 2 & 3 & 4 \\
+    \hline
+    0 & 0 & 0 & 0 & 0 & 0 \\
+    1 & 0 & 1 & 2 & 3 & 4 \\
+    2 & 0 & 2 & 4 & 11 & 13 \\
+    3 & 0 & 3 & 11 & 14 & 22 \\
+    4 & 0 & 4 & 13 & 22 & 31 \\
+    \end{array}
+    \end{aligned}
+
+    $$
 
 
     $$\\
@@ -247,117 +248,143 @@ The solution presented on the blog is my personal solutions for the exercises in
         \end{aligned}
     \\$$
 
-Exercise: Consider the question of representing integers with the base $a$. In order to name the integers in this system we need words for the digits $0, 1, \ldots, a - 1$ and for the various powers of $a$: $a, a^1, a^2, \ldots$. How many different number words are needed to name all numbers from zero to one thousand, for $a = 2, 3, 4, 5, \ldots, 15$? Which base requires the fewest? (Examples: If $a = 10$, we need ten words for the digits, plus words for $10, 100,$ and $1000$, making a total of 13. For $a = 20$, we need twenty words for the digits, plus words for $20$ and $400$, making a total of 22. If $a = 100$, we need 100 plus 1.)
+5. Exercise: Consider the question of representing integers with the base $a$. In order to name the integers in this system we need words for the digits $$0, 1, \ldots, a - 1$$ and for the various powers of $$a$$: $$a, a^1, a^2, \ldots$$. How many different number words are needed to name all numbers from zero to one thousand, for $$a = 2, 3, 4, 5, \ldots, 15$$? Which base requires the fewest? (Examples: If $$a = 10$$, we need ten words for the digits, plus words for $$10, 100,$$ and $$1000$$, making a total of 13. For $$a = 20$$, we need twenty words for the digits, plus words for $$20$$ and $400$, making a total of 22. If $$a = 100$$, we need 100 plus 1.)
+    
+    From the description we can easily get the following count by listsing them.
 
-#### 2. THE INFINITUDE OF THE NUMBER SYSTEM. MATHEMATICAL INDUCTION
+    $$
+        \begin{aligned}
+        a = 10 & : \quad 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10^1,  10^2, 10^3\\
+        a = 11 & : \quad 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, 11^1, 11^2 \\
+        a = 20 & : \quad 0, \ldots, R,S, 20^1, 20^2
+        \end{aligned}
+    $$
+
+    It can be eaily derived that the number of words x needed to name all numbers from 0 to 1000 is number number of a + the maximum power of a that is less or equal to 1000. for 10 that is 3 in $$10^3$$ because $$10^3\leq1000$$.Therefore we can have the formula: 
+
+    $$
+        x = a + \lfloor\frac{\log 1000}{\log a}\rfloor
+    $$
+
+
+    {% include figure.liquid loading="eager" path="assets/img/20140616.png.jpg" class="img-fluid rounded z-depth-1" %}
+
+
+    This shows that 4 uses the fewest words.
+
+#### 2. The Infinite of number system, mathematical induction.
 
 Exercise: Prove by mathematical induction
-1. $$\frac{1}{1 \cdot 2}+\frac{1}{2 \cdot 3}+\cdots+\frac{1}{n(n+1)}=\frac{n}{n+1}$$.
 
-    Base Case: For $n = 1$,
-        $$\\
-        \frac{1}{1 \cdot 2} = \frac{1}{2}
-        \\$$
+1. $$\frac{1}{1 \cdot 2}+\frac{1}{2 \cdot 3}+\cdots+\frac{1}{n(n+1)}=\frac{n}{n+1}$$ . 
+
+    Base Case: For $$n = 1$$,
+
+    $$\frac{1}{1 \cdot 2} = \frac{1}{2}$$
 
     So, the base case holds.
 
     Inductive Step: Assume the statement is true for some arbitrary positive integer \( k \), i.e.,
-        $$\\
-        \frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \cdots + \frac{1}{k(k+1)} = \frac{k}{k+1}.
-        \\$$
 
-    Now, we prove it for \( $$k+1$$ \):
-        $$\\
-        \frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \cdots + \frac{1}{k(k+1)} + \frac{1}{(k+1)((k+1)+1)} = \frac{k}{k+1} + \frac{1}{(k+1)(k+2)}.
-        \\$$
+    $$\frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \cdots + \frac{1}{k(k+1)} = \frac{k}{k+1}.$$
+
+    Now, we prove it for $$k+1$$:
+
+    $$\frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \cdots + \frac{1}{k(k+1)} + \frac{1}{(k+1)((k+1)+1)} = \frac{k}{k+1} + \frac{1}{(k+1)(k+2)}.
+    $$
 
     To simplify the right-hand side:
-        $$\\
-        \frac{k}{k+1} + \frac{1}{(k+1)(k+2)} = \frac{k(k+2) + 1}{(k+1)(k+2)} = \frac{k^2 + 2k + 1}{(k+1)(k+2)} = \frac{(k+1)^2}{(k+1)(k+2)} = \frac{k+1}{k+2}.
-        \\$$
+    
+    $$\begin{aligned}\frac{k}{k+1} + \frac{1}{(k+1)(k+2)} &= \frac{k(k+2) + 1}{(k+1)(k+2)}\\ &= \frac{k^2 + 2k + 1}{(k+1)(k+2)}\\ &= \frac{(k+1)^2}{(k+1)(k+2)}\\ &= \frac{k+1}{k+2}.\end{aligned}$$
 
     Therefore, by mathematical induction, the statement is proven for all positive integers n.
 
-2. $$\frac{1}{2}+\frac{2}{2^n}+\frac{3}{2^n}+\cdots+\frac{n}{2^n}=2-\frac{n+2}{2^n}$$
+2. $$\frac{1}{2}+\frac{2}{2^n}+\frac{3}{2^n}+\cdots+\frac{n}{2^n}=2-\frac{n+2}{2^n}$$.
 
-    Base Case: For \( n = 1 \),
-        $$\\
-        \frac{1}{2} = 2 - \frac{1+2}{2^1} = 2 - \frac{3}{2} = \frac{1}{2}.
-        $$
-        So, the base case holds.
+    Base Case: For $$n = 1$$,
+
+    $$
+    \frac{1}{2} = 2 - \frac{1+2}{2^1} = 2 - \frac{3}{2} = \frac{1}{2}.
+    $$
+    
+    So, the base case holds.
 
     Inductive Step:Assume the statement is true for some arbitrary positive integer \( k \) sum denoted as $A_k$
-        $$\\
-        A_k = \frac{1}{2} + \frac{2}{2^2} + \frac{3}{2^2} + \cdots + \frac{k}{2^2} = 2 - \frac{k+2}{2^k}.
-        \\$$
-        Then for sum of $A_{k+1}$
-        $$\\
-            \begin{aligned}
+    
+    $$
+    A_k = \frac{1}{2} + \frac{2}{2^2} + \frac{3}{2^2} + \cdots + \frac{k}{2^2} = 2 - \frac{k+2}{2^k}.
+    $$
+
+    Then for sum of $$A_{k+1}$$ is: 
+
+    $$
+        \begin{aligned}
             A_{k+1} &= 2 - \frac{k+2}{2^k} + \frac{k+1}{2^{k+1}} \\
             &= 2 - \frac{2k+4}{2^{k+1}} + \frac{k+1}{2^{k+1}} \\
             &= 2 - \frac{k+3}{2^{k+1}}
-            \end{aligned}
-        \\$$
+        \end{aligned}
+    $$
+
     Therefore, by mathematical induction, the statement is proven for all positive integers n.
 
 3. $$1+2 q+3 q^2+\cdots+n q^{n-1}=\frac{1-(n+1) q^n+n q^{n+1}}{(1-q)^2}$$.
 
-    **Base Case:** \( n = 1 \)
+    Base Case: \( n = 1 \)
 
-        $$
+    $$
         1 = 1.
-        $$
+    $$
 
-        $$
-        \frac{1 - 2q + q^2}{(1-q)^2} = \frac{(1-q)^2}{(1-q)^2} = 1.
-        $$
+    $$
+    \frac{1 - 2q + q^2}{(1-q)^2} = \frac{(1-q)^2}{(1-q)^2} = 1.
+    $$
 
-    **Inductive Step:**
+    Inductive Step:
 
     Assume the identity holds for some arbitrary \( n = k \):
 
-        $$\\
-        1 + 2q + 3q^2 + \cdots + kq^{k-1} = \frac{1 - (k+1)q^k + kq^{k+1}}{(1-q)^2}.
-        \\$$
+    $$\\
+    1 + 2q + 3q^2 + \cdots + kq^{k-1} = \frac{1 - (k+1)q^k + kq^{k+1}}{(1-q)^2}.
+    \\$$
 
     Now, we need to show it holds for \( n = k + 1 \):
 
-        $$\\
-        1 + 2q + 3q^2 + \cdots + (k+1)q^k = \frac{1 - ((k+1)+1)q^{k+1} + (k+1)q^{k+2}}{(1-q)^2}.
-        \\$$
+    $$\\
+    1 + 2q + 3q^2 + \cdots + (k+1)q^k = \frac{1 - ((k+1)+1)q^{k+1} + (k+1)q^{k+2}}{(1-q)^2}.
+    \\$$
 
     To prove this, consider the sum up to \( k+1 \):
 
-        $$\\
-        1 + 2q + 3q^2 + \cdots + (k+1)q^k = \left( 1 + 2q + 3q^2 + \cdots + kq^{k-1} \right) + (k+1)q^k.
-        \\$$
+    $$\\
+    1 + 2q + 3q^2 + \cdots + (k+1)q^k = \left( 1 + 2q + 3q^2 + \cdots + kq^{k-1} \right) + (k+1)q^k.
+    \\$$
 
     Using the induction hypothesis:
 
-        $$\\
-        1 + 2q + 3q^2 + \cdots + kq^{k-1} = \frac{1 - (k+1)q^k + kq^{k+1}}{(1-q)^2}.
-        \\$$
+    $$\\
+    1 + 2q + 3q^2 + \cdots + kq^{k-1} = \frac{1 - (k+1)q^k + kq^{k+1}}{(1-q)^2}.
+    \\$$
 
     Therefore,
 
-        $$\\
-        1 + 2q + 3q^2 + \cdots + (k+1)q^k = \frac{1 - (k+1)q^k + kq^{k+1}}{(1-q)^2} + (k+1)q^k.
-        \\$$
+    $$\\
+    1 + 2q + 3q^2 + \cdots + (k+1)q^k = \frac{1 - (k+1)q^k + kq^{k+1}}{(1-q)^2} + (k+1)q^k.
+    \\$$
 
     Combine the terms over a common denominator:
 
-        $$\\
-        \frac{1 - (k+1)q^k + kq^{k+1} + (k+1)q^k (1-q)^2}{(1-q)^2}.
-        \\$$
+    $$\\
+    \frac{1 - (k+1)q^k + kq^{k+1} + (k+1)q^k (1-q)^2}{(1-q)^2}.
+    \\$$
 
     Simplify the numerator:
 
-        $$\\
-        1 - (k+2)q^{k+1} + (k+1)q^{k+2} + (k+1)q^k (1-q)^2.
-        \\$$
+    $$\\
+    1 - (k+2)q^{k+1} + (k+1)q^{k+2} + (k+1)q^k (1-q)^2.
+    \\$$
 
 
-4. $$($+q)\left(1+q^3\right)\left(1+q^0\right) \cdots\left(1+q^{x^n}\right)=\frac{1-q^{2^{n+1}}}{1-q}$$.
+4. $$(1+q)\left(1+q^3\right)\left(1+q^0\right) \cdots\left(1+q^{x^n}\right)=\frac{1-q^{2^{n+1}}}{1-q}$$.
 
 Find the sum of the following geometrical progressions:
 
